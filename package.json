@@ -1,0 +1,16 @@
+{
+  "name": "weatherwebapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "nodemon": "^2.0.20"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "RenitoZix",
+  "license": "ISC"
+}
