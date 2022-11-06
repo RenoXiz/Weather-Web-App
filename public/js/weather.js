@@ -45,9 +45,9 @@ $(document).ready(function () {
                         temp.innerHTML = `<div class="temp-text">${Math.round(data.main.temp) + '°C'}</div>`;
 
                         weather.innerHTML = `<div class="weather-text">${data.weather[0].main}</div>`;
-                        title.innerHTML = data.weather[0].main;
+                        title.innerHTML = 'Weather - ' + data.weather[0].main;
                         favicon.href = `http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png`;
-                        
+
                         localStorage.setItem('city', city.innerHTML);
                         localStorage.setItem('temp', temp.innerHTML);
                         localStorage.setItem('weather', weather.innerHTML);
