@@ -3,7 +3,7 @@ const path = require('path');
 const app = express();
 const weatherapi = require('./weatherapi.js');
 const morgan = require('morgan');
-const port = 80;
+const port = process.env.PORT || 3000;
 
 require('dotenv').config();
 
