@@ -107,7 +107,7 @@ const GetWeatherForecastData = async (lat, lon, lang) => {
             }
         });
     }
-
+    console.log(data.list);
     return data;
 }
 
