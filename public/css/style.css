@@ -47,6 +47,10 @@ body{
   justify-content: space-between;
 
   margin-top: 10px;
+
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .forecast-info{
