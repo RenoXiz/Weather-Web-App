@@ -15,8 +15,8 @@ $(document).ready(function () {
         //Current weather data
         try{
             $.ajax({
-                url : 'https://reno-weather-app.herokuapp.com/GetCurrentWeatherData',
-                type : 'POST',
+                url : 'https://reno-weather-app.herokuapp.com/GetCurrentWeatherData&lat='+position.coords.latitude+'&lon='+position.coords.longitude,
+                type : 'GET',
                 data : {
                     lat : position.coords.latitude,
                     lon : position.coords.longitude,
@@ -51,8 +51,8 @@ $(document).ready(function () {
         //Daily forecast data
         try{
             $.ajax({
-                url : 'https://reno-weather-app.herokuapp.com/GetWeatherForecastData',
-                type : 'POST',
+                url : 'https://reno-weather-app.herokuapp.com/GetWeatherForecastData&lat=' + position.coords.latitude + '&lon=' + position.coords.longitude,
+                type : 'GET',
                 data : {
                     lat : position.coords.latitude,
                     lon : position.coords.longitude,
