@@ -8,7 +8,6 @@ $(document).ready(function () {
 
     if (lang == "es-ES" || lang == "es" || lang == "es-419" || lang == "es-AR" || lang == "es-BO" || lang == "es-CL" || lang == "es-CO" || lang == "es-CR" || lang == "es-DO" || lang == "es-EC" || lang == "es-SV" || lang == "es-GT" || lang == "es-HN" || lang == "es-MX" || lang == "es-NI" || lang == "es-PA" || lang == "es-PY" || lang == "es-PE" || lang == "es-PR" || lang == "es-UY" || lang == "es-VE") {
         weekday = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
-        weatherCondition = 
     } else {
         weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     }
@@ -43,71 +42,77 @@ $(document).ready(function () {
                     if (data.cod === 200) {
                         city.innerHTML = `<div class="city-text">${data.name}</div>`;
                         temp.innerHTML = `<div class="temp-text">${Math.round(data.main.temp) + '°C'}</div>`;
-                        
-                        if (data.weather[0].main == "Clear") {
-                            weather.innerHTML = `<div class="weather-text">Soleado</div>`;
-                            favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
-                            title.innerHTML = 'Soleado';
-                        } else if (data.weather[0].main == "Clouds") {
-                            weather.innerHTML = `<div class="weather-text">Nublado</div>`;
-                            favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
-                            title.innerHTML = 'Nublado';
-                        } else if (data.weather[0].main == "Rain") {
-                            weather.innerHTML = `<div class="weather-text">Lluvia</div>`;
-                            favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
-                            title.innerHTML = 'Lluvia';
-                        } else if (data.weather[0].main == "Snow") {
-                            weather.innerHTML = `<div class="weather-text">Nieve</div>`;
-                            favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
-                            title.innerHTML = 'Nieve';
-                        } else if (data.weather[0].main == "Thunderstorm") {
-                            weather.innerHTML = `<div class="weather-text">Tormenta</div>`;
-                            favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
-                            title.innerHTML = 'Tormenta';
-                        } else if (data.weather[0].main == "Drizzle") {
-                            weather.innerHTML = `<div class="weather-text">Llovizna</div>`;
-                            favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
-                            title.innerHTML = 'Llovizna';
-                        } else if (data.weather[0].main == "Mist") {
-                            weather.innerHTML = `<div class="weather-text">Niebla</div>`;
-                            favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
-                            title.innerHTML = 'Niebla';
-                        } else if (data.weather[0].main == "Smoke") {
-                            weather.innerHTML = `<div class="weather-text">Humo</div>`;
-                            favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
-                            title.innerHTML = 'Humo';
-                        } else if (data.weather[0].main == "Haze") {
-                            weather.innerHTML = `<div class="weather-text">Niebla</div>`;
-                            favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
-                            title.innerHTML = 'Niebla';
-                        } else if (data.weather[0].main == "Dust") {
-                            weather.innerHTML = `<div class="weather-text">Polvo</div>`;
-                            favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
-                            title.innerHTML = 'Polvo';
-                        } else if (data.weather[0].main == "Fog") {
-                            weather.innerHTML = `<div class="weather-text">Niebla</div>`;
-                            favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
-                            title.innerHTML = 'Niebla';
-                        } else if (data.weather[0].main == "Sand") {
-                            weather.innerHTML = `<div class="weather-text">Arena</div>`;
-                            favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
-                            title.innerHTML = 'Arena';
-                        } else if (data.weather[0].main == "Ash") {
-                            weather.innerHTML = `<div class="weather-text">Ceniza</div>`;
-                            favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
-                            title.innerHTML = 'Ceniza';
-                        } else if (data.weather[0].main == "Squall") {
-                            weather.innerHTML = `<div class="weather-text">Ráfaga</div>`;
-                            favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
-                            title.innerHTML = 'Ráfaga';
-                        } else if (data.weather[0].main == "Tornado") {
-                            weather.innerHTML = `<div class="weather-text">Tornado</div>`;
-                            favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
-                            title.innerHTML = 'Tornado';
+
+                        if (lang == "es-ES" || lang == "es" || lang == "es-419" || lang == "es-AR" || lang == "es-BO" || lang == "es-CL" || lang == "es-CO" || lang == "es-CR" || lang == "es-DO" || lang == "es-EC" || lang == "es-SV" || lang == "es-GT" || lang == "es-HN" || lang == "es-MX" || lang == "es-NI" || lang == "es-PA" || lang == "es-PY" || lang == "es-PE" || lang == "es-PR" || lang == "es-UY" || lang == "es-VE") {
+                            if (data.weather[0].main == "Clear") {
+                                weather.innerHTML = `<div class="weather-text">Soleado</div>`;
+                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
+                                title.innerHTML = 'Soleado';
+                            } else if (data.weather[0].main == "Clouds") {
+                                weather.innerHTML = `<div class="weather-text">Nublado</div>`;
+                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
+                                title.innerHTML = 'Nublado';
+                            } else if (data.weather[0].main == "Rain") {
+                                weather.innerHTML = `<div class="weather-text">Lluvia</div>`;
+                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
+                                title.innerHTML = 'Lluvia';
+                            } else if (data.weather[0].main == "Snow") {
+                                weather.innerHTML = `<div class="weather-text">Nieve</div>`;
+                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
+                                title.innerHTML = 'Nieve';
+                            } else if (data.weather[0].main == "Thunderstorm") {
+                                weather.innerHTML = `<div class="weather-text">Tormenta</div>`;
+                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
+                                title.innerHTML = 'Tormenta';
+                            } else if (data.weather[0].main == "Drizzle") {
+                                weather.innerHTML = `<div class="weather-text">Llovizna</div>`;
+                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
+                                title.innerHTML = 'Llovizna';
+                            } else if (data.weather[0].main == "Mist") {
+                                weather.innerHTML = `<div class="weather-text">Niebla</div>`;
+                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
+                                title.innerHTML = 'Niebla';
+                            } else if (data.weather[0].main == "Smoke") {
+                                weather.innerHTML = `<div class="weather-text">Humo</div>`;
+                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
+                                title.innerHTML = 'Humo';
+                            } else if (data.weather[0].main == "Haze") {
+                                weather.innerHTML = `<div class="weather-text">Niebla</div>`;
+                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
+                                title.innerHTML = 'Niebla';
+                            } else if (data.weather[0].main == "Dust") {
+                                weather.innerHTML = `<div class="weather-text">Polvo</div>`;
+                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
+                                title.innerHTML = 'Polvo';
+                            } else if (data.weather[0].main == "Fog") {
+                                weather.innerHTML = `<div class="weather-text">Niebla</div>`;
+                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
+                                title.innerHTML = 'Niebla';
+                            } else if (data.weather[0].main == "Sand") {
+                                weather.innerHTML = `<div class="weather-text">Arena</div>`;
+                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
+                                title.innerHTML = 'Arena';
+                            } else if (data.weather[0].main == "Ash") {
+                                weather.innerHTML = `<div class="weather-text">Ceniza</div>`;
+                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
+                                title.innerHTML = 'Ceniza';
+                            } else if (data.weather[0].main == "Squall") {
+                                weather.innerHTML = `<div class="weather-text">Ráfaga</div>`;
+                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
+                                title.innerHTML = 'Ráfaga';
+                            } else if (data.weather[0].main == "Tornado") {
+                                weather.innerHTML = `<div class="weather-text">Tornado</div>`;
+                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
+                                title.innerHTML = 'Tornado';
+                            } else {
+                                weather.innerHTML = `<div class="weather-text">Desconocido</div>`;
+                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
+                                title.innerHTML = 'Desconocido';
+                            }
                         } else {
-                            weather.innerHTML = `<div class="weather-text">Desconocido</div>`;
-                            favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
-                            title.innerHTML = 'Desconocido';
+                            weather.innerHTML = `<div class="weather-text">${data.weather[0].main}</div>`;
+                            favicon.href = `http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png`;
+                            title.innerHTML = data.weather[0].main;
                         }
     
                         localStorage.setItem('city', city.innerHTML);
