@@ -3,8 +3,6 @@ $(document).ready(function () {
     var lang = window.navigator.language || navigator.browserLanguage;
 
     var weekday = new Array();
-    var weatherCondition = new Array();
-
 
     if (lang == "es-ES" || lang == "es" || lang == "es-419" || lang == "es-AR" || lang == "es-BO" || lang == "es-CL" || lang == "es-CO" || lang == "es-CR" || lang == "es-DO" || lang == "es-EC" || lang == "es-SV" || lang == "es-GT" || lang == "es-HN" || lang == "es-MX" || lang == "es-NI" || lang == "es-PA" || lang == "es-PY" || lang == "es-PE" || lang == "es-PR" || lang == "es-UY" || lang == "es-VE") {
         weekday = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
@@ -88,49 +86,11 @@ $(document).ready(function () {
                                 let date = new Date(item.dt_txt);
                                 let day = weekday[date.getDay()];
 
-                                var weatherName = item.weather[0].main;
-
-                                if (lang == 'es') {
-                                    if (weatherName == "Clear") {
-                                        weatherName = 'Despejado';
-                                    } else if (weatherName == "Clouds") {
-                                        weatherName = 'Nublado';
-                                    } else if (weatherName == "Rain") {
-                                        weatherName = 'Lluvia';
-                                    } else if (weatherName == "Snow") {
-                                        weatherName = 'Nieve';
-                                    } else if (weatherName == "Thunderstorm") {
-                                        weatherName = 'Tormenta';
-                                    } else if (weatherName == "Drizzle") {
-                                        weatherName = 'Llovizna';
-                                    } else if (weatherName == "Mist") {
-                                        weatherName = 'Niebla';
-                                    } else if (weatherName == "Smoke") {
-                                        weatherName = 'Humo';
-                                    } else if (weatherName == "Haze") {
-                                        weatherName = 'Niebla';
-                                    } else if (weatherName == "Dust") {
-                                        weatherName = 'Polvo';
-                                    } else if (weatherName == "Fog") {
-                                        weatherName = 'Niebla';
-                                    } else if (weatherName == "Sand") {
-                                        weatherName = 'Arena';
-                                    } else if (weatherName == "Ash") {
-                                        weatherName = 'Ceniza';
-                                    } else if (weatherName == "Squall") {
-                                        weatherName = 'Ráfaga';
-                                    } else if (weatherName == "Tornado") {
-                                        weatherName = 'Tornado';
-                                    } else {
-                                        weatherName = 'Desconocido';
-                                    }
-                                }
-    
                                 forecast.innerHTML +=  `<div class="forecast-item">
                                                             <div class="forecast-info">
                                                                 <img class="forecast-icon" src="http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png" alt="weather-icon">
                                                                 <div class="forecast-date">${day}</div>
-                                                                <div class="forecast-weather">- ${weatherName}</div>
+                                                                <div class="forecast-weather">- ${item.weather[0].name}</div>
                                                             </div>
                                                             <div class="forecast-temp">${Math.round(item.main.temp) + '°C'}</div>
                                                         </div>`;
