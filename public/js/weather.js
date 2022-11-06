@@ -2,6 +2,9 @@ $(document).ready(function () {
 
     const weekday = ["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"];
 
+    //favicon
+    const favicon = document.querySelector("link[rel*='icon']") || document.createElement('link');
+
     //Current weather data
     const city= document.querySelector('.city-container');
     const temp = document.querySelector('.temp-container');
@@ -27,6 +30,8 @@ $(document).ready(function () {
                         city.innerHTML = `<div class="city-text">${data.name}</div>`;
                         temp.innerHTML = `<div class="temp-text">${Math.round(data.main.temp) + '°C'}</div>`;
                         weather.innerHTML = `<div class="weather-text">${data.weather[0].main}</div>`;
+
+                        favicon.href = `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
     
                         localStorage.setItem('city', city.innerHTML);
                         localStorage.setItem('temp', temp.innerHTML);
