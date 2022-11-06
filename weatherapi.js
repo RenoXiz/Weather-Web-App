@@ -18,7 +18,7 @@ const GetCurrentWeatherData = async (lat, lon, lang) => {
 
     if(lang == "es-ES" || lang == "es" || lang == "es-419" || lang == "es-AR" || lang == "es-BO" || lang == "es-CL" || lang == "es-CO" || lang == "es-CR" || lang == "es-DO" || lang == "es-EC" || lang == "es-SV" || lang == "es-GT" || lang == "es-HN" || lang == "es-MX" || lang == "es-NI" || lang == "es-PA" || lang == "es-PY" || lang == "es-PE" || lang == "es-PR" || lang == "es-UY" || lang == "es-VE"){
         if (data.weather[0].main == "Clear") {
-            data.weather[0].main = 'Soleado';
+            data.weather[0].main = 'Despejado';
         } else if (data.weather[0].main == "Clouds") {
             data.weather[0].main = 'Nublado';
         } else if (data.weather[0].main == "Rain") {
@@ -73,7 +73,7 @@ const GetWeatherForecastData = async (lat, lon, lang) => {
     if(lang == "es-ES" || lang == "es" || lang == "es-419" || lang == "es-AR" || lang == "es-BO" || lang == "es-CL" || lang == "es-CO" || lang == "es-CR" || lang == "es-DO" || lang == "es-EC" || lang == "es-SV" || lang == "es-GT" || lang == "es-HN" || lang == "es-MX" || lang == "es-NI" || lang == "es-PA" || lang == "es-PY" || lang == "es-PE" || lang == "es-PR" || lang == "es-UY" || lang == "es-VE"){
         data.list.forEach((item) => {
             if (item.weather[0].main == "Clear") {
-                item.weather[0].main = 'Soleado';
+                item.weather[0].main = 'Despejado';
             } else if (item.weather[0].main == "Clouds") {
                 item.weather[0].main = 'Nublado';
             } else if (item.weather[0].main == "Rain") {
