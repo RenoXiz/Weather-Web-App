@@ -36,6 +36,7 @@ $(document).ready(function () {
                 data : {
                     lat : position.coords.latitude,
                     lon : position.coords.longitude,
+                    lang : lang
                 },
                 success : function(data) {
     
@@ -43,63 +44,10 @@ $(document).ready(function () {
                         city.innerHTML = `<div class="city-text">${data.name}</div>`;
                         temp.innerHTML = `<div class="temp-text">${Math.round(data.main.temp) + '°C'}</div>`;
 
-                        if (lang == "es-ES" || lang == "es" || lang == "es-419" || lang == "es-AR" || lang == "es-BO" || lang == "es-CL" || lang == "es-CO" || lang == "es-CR" || lang == "es-DO" || lang == "es-EC" || lang == "es-SV" || lang == "es-GT" || lang == "es-HN" || lang == "es-MX" || lang == "es-NI" || lang == "es-PA" || lang == "es-PY" || lang == "es-PE" || lang == "es-PR" || lang == "es-UY" || lang == "es-VE") {
-                            if (data.weather[0].main == "Clear") {
-                                weather.innerHTML = `<div class="weather-text">Despejado</div>`;
-                                title.innerHTML = 'Soleado';
-                            } else if (data.weather[0].main == "Clouds") {
-                                weather.innerHTML = `<div class="weather-text">Nublado</div>`;
-                                title.innerHTML = 'Nublado';
-                            } else if (data.weather[0].main == "Rain") {
-                                weather.innerHTML = `<div class="weather-text">Lluvia</div>`;
-                                title.innerHTML = 'Lluvia';
-                            } else if (data.weather[0].main == "Snow") {
-                                weather.innerHTML = `<div class="weather-text">Nieve</div>`;
-                                title.innerHTML = 'Nieve';
-                            } else if (data.weather[0].main == "Thunderstorm") {
-                                weather.innerHTML = `<div class="weather-text">Tormenta</div>`;
-                                title.innerHTML = 'Tormenta';
-                            } else if (data.weather[0].main == "Drizzle") {
-                                weather.innerHTML = `<div class="weather-text">Llovizna</div>`;
-                                title.innerHTML = 'Llovizna';
-                            } else if (data.weather[0].main == "Mist") {
-                                weather.innerHTML = `<div class="weather-text">Niebla</div>`;
-                                title.innerHTML = 'Niebla';
-                            } else if (data.weather[0].main == "Smoke") {
-                                weather.innerHTML = `<div class="weather-text">Humo</div>`;
-                                title.innerHTML = 'Humo';
-                            } else if (data.weather[0].main == "Haze") {
-                                weather.innerHTML = `<div class="weather-text">Niebla</div>`;
-                                title.innerHTML = 'Niebla';
-                            } else if (data.weather[0].main == "Dust") {
-                                weather.innerHTML = `<div class="weather-text">Polvo</div>`;
-                                title.innerHTML = 'Polvo';
-                            } else if (data.weather[0].main == "Fog") {
-                                weather.innerHTML = `<div class="weather-text">Niebla</div>`;
-                                title.innerHTML = 'Niebla';
-                            } else if (data.weather[0].main == "Sand") {
-                                weather.innerHTML = `<div class="weather-text">Arena</div>`;
-                                title.innerHTML = 'Arena';
-                            } else if (data.weather[0].main == "Ash") {
-                                weather.innerHTML = `<div class="weather-text">Ceniza</div>`;
-                                title.innerHTML = 'Ceniza';
-                            } else if (data.weather[0].main == "Squall") {
-                                weather.innerHTML = `<div class="weather-text">Ráfaga</div>`;
-                                title.innerHTML = 'Ráfaga';
-                            } else if (data.weather[0].main == "Tornado") {
-                                weather.innerHTML = `<div class="weather-text">Tornado</div>`;
-                                title.innerHTML = 'Tornado';
-                            } else {
-                                weather.innerHTML = `<div class="weather-text">Desconocido</div>`;
-                                title.innerHTML = 'Desconocido';
-                            }
-                        } else {
-                            weather.innerHTML = `<div class="weather-text">${data.weather[0].main}</div>`;
-                            title.innerHTML = data.weather[0].main;
-                        }
-
+                        weather.innerHTML = `<div class="weather-text">${data.weather[0].main}</div>`;
+                        title.innerHTML = data.weather[0].main;
                         favicon.href = `http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png`;
-    
+                        
                         localStorage.setItem('city', city.innerHTML);
                         localStorage.setItem('temp', temp.innerHTML);
                         localStorage.setItem('weather', weather.innerHTML);
@@ -128,6 +76,7 @@ $(document).ready(function () {
                 data : {
                     lat : position.coords.latitude,
                     lon : position.coords.longitude,
+                    lang : lang
                 },
                 success : function(data) {
                     if (data.cod === '200') {
