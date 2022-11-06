@@ -92,7 +92,7 @@ $(document).ready(function () {
                                                                 <div class="forecast-date">${day}</div>
                                                                 <div class="forecast-weather">- ${item.weather[0].main}</div>
                                                             </div>
-                                                            <div class="forecast-temp">${Math.round(item.main.temp_max) + '°C'} / ${Math.round(item.main.temp_min) + '°C'}</div>
+                                                            <div class="forecast-temp">${Math.round(item.main.temp_max) + '°C'}</div>
                                                         </div>`;
                             }
                         });
