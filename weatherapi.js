@@ -72,8 +72,6 @@ const GetWeatherForecastData = async (lat, lon, lang) => {
 
     if(lang == "es-ES" || lang == "es" || lang == "es-419" || lang == "es-AR" || lang == "es-BO" || lang == "es-CL" || lang == "es-CO" || lang == "es-CR" || lang == "es-DO" || lang == "es-EC" || lang == "es-SV" || lang == "es-GT" || lang == "es-HN" || lang == "es-MX" || lang == "es-NI" || lang == "es-PA" || lang == "es-PY" || lang == "es-PE" || lang == "es-PR" || lang == "es-UY" || lang == "es-VE"){
         data.list.forEach((item) => {
-            console.log(item.weather[0].main);
-
             if (item.weather[0].main == "Clear") {
                 item.weather[0].main = 'Soleado';
             } else if (item.weather[0].main == "Clouds") {
@@ -107,6 +105,8 @@ const GetWeatherForecastData = async (lat, lon, lang) => {
             } else {
                 item.weather[0].main = 'Desconocido';
             }
+
+            console.log(item.weather[0].main);
         });
     }
 
