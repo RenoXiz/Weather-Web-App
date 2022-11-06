@@ -5,6 +5,9 @@ $(document).ready(function () {
     //favicon
     const favicon = document.querySelector("link[rel*='icon']") || document.createElement('link');
 
+    //title
+    const title = document.querySelector("title");
+
     //Current weather data
     const city= document.querySelector('.city-container');
     const temp = document.querySelector('.temp-container');
@@ -32,6 +35,7 @@ $(document).ready(function () {
                         weather.innerHTML = `<div class="weather-text">${data.weather[0].main}</div>`;
 
                         favicon.href = `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
+                        title.innerHTML = `Weather - ${data.weather[0].main}`;
     
                         localStorage.setItem('city', city.innerHTML);
                         localStorage.setItem('temp', temp.innerHTML);
