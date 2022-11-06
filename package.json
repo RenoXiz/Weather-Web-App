@@ -1,7 +1,6 @@
 {
   "name": "weatherwebapp",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "dependencies": {
     "dotenv": "^16.0.3",
@@ -14,8 +13,19 @@
     "nodemon": "^2.0.20"
   },
   "scripts": {
-    "deploy": "nodemon app.js"
+    "start": "node app.js",
+    "deploy": "npm i",
+    "dev": "nodemon app.js"
   },
   "author": "RenitoZix",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RenoXiz/Weather-Web-App.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RenoXiz/Weather-Web-App/issues"
+  },
+  "homepage": "https://github.com/RenoXiz/Weather-Web-App#readme",
+  "description": ""
 }
