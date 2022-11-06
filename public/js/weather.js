@@ -87,6 +87,8 @@ $(document).ready(function () {
             });
         }
         catch(e){
+            console.log(e);
+            
             forecast.innerHTML = localStorage.getItem('forecast');
         }
         
