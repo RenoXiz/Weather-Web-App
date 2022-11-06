@@ -34,3 +34,50 @@ body{
   color: #ffffff;
 }
 
+.forecast-container{
+  margin-top: 15vh;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.forecast-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-top: 10px;
+}
+
+.forecast-info{
+  font-size: 1em;
+  font-weight: bold;
+  color: #ffffff;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.forecast-weather{
+  font-size: 1em;
+  font-weight: bold;
+  color: #ffffff;
+
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.forecast-temp{
+  font-size: 1em;
+  font-weight: bold;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
