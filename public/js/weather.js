@@ -86,13 +86,11 @@ $(document).ready(function () {
                                 let date = new Date(item.dt_txt);
                                 let day = weekday[date.getDay()];
 
-                                console.log(item.weather[0].name);
-
                                 forecast.innerHTML +=  `<div class="forecast-item">
                                                             <div class="forecast-info">
                                                                 <img class="forecast-icon" src="https://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png" alt="weather-icon">
                                                                 <div class="forecast-date">${day}</div>
-                                                                <div class="forecast-weather">- ${item.weather[0].name}</div>
+                                                                <div class="forecast-weather">- ${item.weather[0].main}</div>
                                                             </div>
                                                             <div class="forecast-temp">${Math.round(item.main.temp) + '°C'}</div>
                                                         </div>`;

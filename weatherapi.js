@@ -105,8 +105,6 @@ const GetWeatherForecastData = async (lat, lon, lang) => {
             } else {
                 item.weather[0].main = 'Desconocido';
             }
-
-            console.log(item.weather[0].main);
         });
     }
 
