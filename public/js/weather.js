@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    const weekday = ["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"];
+    const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     //favicon
     const favicon = document.querySelector("link[rel*='icon']") || document.createElement('link');
