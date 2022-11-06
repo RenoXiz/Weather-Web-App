@@ -45,75 +45,60 @@ $(document).ready(function () {
 
                         if (lang == "es-ES" || lang == "es" || lang == "es-419" || lang == "es-AR" || lang == "es-BO" || lang == "es-CL" || lang == "es-CO" || lang == "es-CR" || lang == "es-DO" || lang == "es-EC" || lang == "es-SV" || lang == "es-GT" || lang == "es-HN" || lang == "es-MX" || lang == "es-NI" || lang == "es-PA" || lang == "es-PY" || lang == "es-PE" || lang == "es-PR" || lang == "es-UY" || lang == "es-VE") {
                             if (data.weather[0].main == "Clear") {
-                                weather.innerHTML = `<div class="weather-text">Soleado</div>`;
-                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
+                                weather.innerHTML = `<div class="weather-text">Despejado</div>`;
                                 title.innerHTML = 'Soleado';
                             } else if (data.weather[0].main == "Clouds") {
                                 weather.innerHTML = `<div class="weather-text">Nublado</div>`;
-                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
                                 title.innerHTML = 'Nublado';
                             } else if (data.weather[0].main == "Rain") {
                                 weather.innerHTML = `<div class="weather-text">Lluvia</div>`;
-                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
                                 title.innerHTML = 'Lluvia';
                             } else if (data.weather[0].main == "Snow") {
                                 weather.innerHTML = `<div class="weather-text">Nieve</div>`;
-                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
                                 title.innerHTML = 'Nieve';
                             } else if (data.weather[0].main == "Thunderstorm") {
                                 weather.innerHTML = `<div class="weather-text">Tormenta</div>`;
-                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
                                 title.innerHTML = 'Tormenta';
                             } else if (data.weather[0].main == "Drizzle") {
                                 weather.innerHTML = `<div class="weather-text">Llovizna</div>`;
-                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
                                 title.innerHTML = 'Llovizna';
                             } else if (data.weather[0].main == "Mist") {
                                 weather.innerHTML = `<div class="weather-text">Niebla</div>`;
-                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
                                 title.innerHTML = 'Niebla';
                             } else if (data.weather[0].main == "Smoke") {
                                 weather.innerHTML = `<div class="weather-text">Humo</div>`;
-                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
                                 title.innerHTML = 'Humo';
                             } else if (data.weather[0].main == "Haze") {
                                 weather.innerHTML = `<div class="weather-text">Niebla</div>`;
-                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
                                 title.innerHTML = 'Niebla';
                             } else if (data.weather[0].main == "Dust") {
                                 weather.innerHTML = `<div class="weather-text">Polvo</div>`;
-                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
                                 title.innerHTML = 'Polvo';
                             } else if (data.weather[0].main == "Fog") {
                                 weather.innerHTML = `<div class="weather-text">Niebla</div>`;
-                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
                                 title.innerHTML = 'Niebla';
                             } else if (data.weather[0].main == "Sand") {
                                 weather.innerHTML = `<div class="weather-text">Arena</div>`;
-                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
                                 title.innerHTML = 'Arena';
                             } else if (data.weather[0].main == "Ash") {
                                 weather.innerHTML = `<div class="weather-text">Ceniza</div>`;
-                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
                                 title.innerHTML = 'Ceniza';
                             } else if (data.weather[0].main == "Squall") {
                                 weather.innerHTML = `<div class="weather-text">Ráfaga</div>`;
-                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
                                 title.innerHTML = 'Ráfaga';
                             } else if (data.weather[0].main == "Tornado") {
                                 weather.innerHTML = `<div class="weather-text">Tornado</div>`;
-                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
                                 title.innerHTML = 'Tornado';
                             } else {
                                 weather.innerHTML = `<div class="weather-text">Desconocido</div>`;
-                                favicon.href = 'https://i.imgur.com/4ZQ9Z4u.png';
                                 title.innerHTML = 'Desconocido';
                             }
                         } else {
                             weather.innerHTML = `<div class="weather-text">${data.weather[0].main}</div>`;
-                            favicon.href = `http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png`;
                             title.innerHTML = data.weather[0].main;
                         }
+
+                        favicon.href = `http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png`;
     
                         localStorage.setItem('city', city.innerHTML);
                         localStorage.setItem('temp', temp.innerHTML);
@@ -153,12 +138,50 @@ $(document).ready(function () {
                             if (index % 8 === 0) {
                                 let date = new Date(item.dt_txt);
                                 let day = weekday[date.getDay()];
+
+                                var weatherName = item.weather[0].main;
+
+                                if (lang == 'es') {
+                                    if (weatherName == "Clear") {
+                                        weatherName = 'Despejado';
+                                    } else if (weatherName == "Clouds") {
+                                        weatherName = 'Nublado';
+                                    } else if (weatherName == "Rain") {
+                                        weatherName = 'Lluvia';
+                                    } else if (weatherName == "Snow") {
+                                        weatherName = 'Nieve';
+                                    } else if (weatherName == "Thunderstorm") {
+                                        weatherName = 'Tormenta';
+                                    } else if (weatherName == "Drizzle") {
+                                        weatherName = 'Llovizna';
+                                    } else if (weatherName == "Mist") {
+                                        weatherName = 'Niebla';
+                                    } else if (weatherName == "Smoke") {
+                                        weatherName = 'Humo';
+                                    } else if (weatherName == "Haze") {
+                                        weatherName = 'Niebla';
+                                    } else if (weatherName == "Dust") {
+                                        weatherName = 'Polvo';
+                                    } else if (weatherName == "Fog") {
+                                        weatherName = 'Niebla';
+                                    } else if (weatherName == "Sand") {
+                                        weatherName = 'Arena';
+                                    } else if (weatherName == "Ash") {
+                                        weatherName = 'Ceniza';
+                                    } else if (weatherName == "Squall") {
+                                        weatherName = 'Ráfaga';
+                                    } else if (weatherName == "Tornado") {
+                                        weatherName = 'Tornado';
+                                    } else {
+                                        weatherName = 'Desconocido';
+                                    }
+                                }
     
                                 forecast.innerHTML +=  `<div class="forecast-item">
                                                             <div class="forecast-info">
                                                                 <img class="forecast-icon" src="http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png" alt="weather-icon">
                                                                 <div class="forecast-date">${day}</div>
-                                                                <div class="forecast-weather">- ${item.weather[0].main}</div>
+                                                                <div class="forecast-weather">- ${weatherName}</div>
                                                             </div>
                                                             <div class="forecast-temp">${Math.round(item.main.temp) + '°C'}</div>
                                                         </div>`;
