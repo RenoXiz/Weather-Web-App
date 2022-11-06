@@ -43,7 +43,7 @@ $(document).ready(function () {
                         temp.innerHTML = `<div class="temp-text">${Math.round(data.main.temp) + '°C'}</div>`;
 
                         weather.innerHTML = `<div class="weather-text">${data.weather[0].main}</div>`;
-                        favicon.href = `http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
+                        favicon.href = `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
                         title.innerHTML = 'Weather - ' + data.weather[0].main;
 
                         localStorage.setItem('city', city.innerHTML);
@@ -88,7 +88,7 @@ $(document).ready(function () {
 
                                 forecast.innerHTML +=  `<div class="forecast-item">
                                                             <div class="forecast-info">
-                                                                <img class="forecast-icon" src="http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png" alt="weather-icon">
+                                                                <img class="forecast-icon" src="https://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png" alt="weather-icon">
                                                                 <div class="forecast-date">${day}</div>
                                                                 <div class="forecast-weather">- ${item.weather[0].name}</div>
                                                             </div>
