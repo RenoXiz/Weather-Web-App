@@ -24,13 +24,13 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-app.get('/GetCurrentWeatherData', (req, res) => {
+app.post('/GetCurrentWeatherData', (req, res) => {
     weatherapi.GetCurrentWeatherData(req.body.lat, req.body.lon).then((data) => {
         res.json(data);
     });
 });
 
-app.get('/GetWeatherForecastData', (req, res) => {
+app.post('/GetWeatherForecastData', (req, res) => {
     weatherapi.GetWeatherForecastData(req.body.lat, req.body.lon).then((data) => {
         res.json(data);
     });
