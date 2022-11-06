@@ -15,7 +15,7 @@ app.set('view engine', 'ejs');
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 //middleware
-app.use(morgan('dev'));
+app.use(morgan('tiny'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
