@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 
 const GetCurrentWeatherData = async (lat, lon) => {
     const api = process.env.API_KEY;
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=es&appid=${api}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=sp&appid=${api}`;
 
     const response = await fetch(url);
     const data = await response.json();
@@ -12,7 +12,7 @@ const GetCurrentWeatherData = async (lat, lon) => {
 
 const GetWeatherForecastData = async (lat, lon) => {
     const api = process.env.API_KEY;
-    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=es&appid=${api}`;
+    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=sp&appid=${api}`;
 
     const response = await fetch(url);
     const data = await response.json();
