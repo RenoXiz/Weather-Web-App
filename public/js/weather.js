@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     var weekday = new Array();
 
-    if (lang == "es-ES" || lang == "es" || lang == "es-419" || lang == "es-AR" || lang == "es-BO" || lang == "es-CL" || lang == "es-CO" || lang == "es-CR" || lang == "es-DO" || lang == "es-EC" || lang == "es-SV" || lang == "es-GT" || lang == "es-HN" || lang == "es-MX" || lang == "es-NI" || lang == "es-PA" || lang == "es-PY" || lang == "es-PE" || lang == "es-PR" || lang == "es-UY" || lang == "es-VE") {
+    if (String.prototype.includes(lang, "es") == 0) {
         weekday = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
     } else {
         weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -20,6 +20,7 @@ $(document).ready(function () {
     const city= document.querySelector('.city-container');
     const temp = document.querySelector('.temp-container');
     const weather = document.querySelector('.weather-container');
+    const current = document.querySelector('.current-container');
 
     //Daily forecast data
     const forecast = document.querySelector('.forecast-container');
@@ -41,8 +42,15 @@ $(document).ready(function () {
                     if (data.cod === 200) {
                         city.innerHTML = `<div class="city-text">${data.name}</div>`;
                         temp.innerHTML = `<div class="temp-text">${Math.round(data.main.temp) + '°C'}</div>`;
-
                         weather.innerHTML = `<div class="weather-text">${data.weather[0].main}</div>`;
+
+                        current.innerHTML = `
+                            <div class="temp-feel-like">
+                                <div class="temp-feel-like-text">${Math.round(data.main.feels_like) + '°C'}</div>
+                                <div class="temp-feel-like-text">${data.weather[0].description}</div>
+                            </div>
+                            `;
+                        
                         favicon.href = `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
                         title.innerHTML = 'Weather - ' + data.weather[0].main;
 
