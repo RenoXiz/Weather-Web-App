@@ -179,6 +179,7 @@ $(document).ready(function () {
     temp.innerHTML = '<div class="spinner-border" role="status"></div>';
     weather.innerHTML = '<div class="spinner-border" role="status"></div>';
     forecast.innerHTML = '<div class="spinner-border" role="status"></div>';
+    current.innerHTML = '<div class="spinner-border" role="status"></div>';
 
     navigator.geolocation.getCurrentPosition(OnGetPosition, OnGetPositionError);
 });
