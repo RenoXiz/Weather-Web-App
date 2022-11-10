@@ -9,7 +9,13 @@ $(document).ready(function () {
     var chance_of_rain = "";
     var pressure = "";
     var wind_speed = "";
-    var uv_index = "";
+    var wind_direction = "";
+
+    const DegToCompass = (num) => {
+        var val = Math.floor((num / 22.5) + 0.5);
+        var arr = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
+        return arr[(val % 16)];
+    }
 
     if (String.prototype.includes(lang, "es") == 0) {
         weekday = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
@@ -19,7 +25,7 @@ $(document).ready(function () {
         chance_of_rain = "Probabilidad de lluvia";
         pressure = "Presión";
         wind_speed = "Velocidad del viento";
-        uv_index = "Índice UV";
+        wind_direction = "Dirección del viento";
     } else {
         weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         
@@ -28,7 +34,7 @@ $(document).ready(function () {
         chance_of_rain = "Chance of rain";
         pressure = "Pressure";
         wind_speed = "Wind speed";
-        uv_index = "UV index";
+        wind_direction = "Wind direction";
     }
 
     //favicon
@@ -86,9 +92,9 @@ $(document).ready(function () {
                                 <div class="wind-speed-text">${wind_speed}</div>
                                 <div class="wind-speed-text">${data.wind.speed + ' m/s'}</div>
                             </div>
-                            <div class="uv-index">
-                                <div class="uv-index-text">${uv_index}</div>
-                                <div class="uv-index-text">${data.main.uvi}</div>
+                            <div class="wind-direction">
+                                <div class="wind-direction-text">${wind_direction}</div>
+                                <div class="wind-direction-text">${DegToCompass(data.wind.deg)}</div>
                             </div>
                             `;
                         
