@@ -71,6 +71,7 @@ $(document).ready(function () {
                         temp.innerHTML = `<div class="temp-text">${Math.round(data.main.temp) + '°C'}</div>`;
                         weather.innerHTML = `<div class="weather-text">${data.weather[0].main}</div>`;
 
+                        current.className = 'current-container'
                         current.innerHTML = `
                             <div class="temp-feel-like">
                                 <div class="temp-feel-like-text">${feel_like}</div>
@@ -179,7 +180,7 @@ $(document).ready(function () {
     temp.innerHTML = '<div class="spinner-border" role="status"></div>';
     weather.innerHTML = '<div class="spinner-border" role="status"></div>';
     forecast.innerHTML = '<div class="spinner-border" role="status"></div>';
-    current.innerHTML = '<div class="spinner-border" role="status"></div>';
+    current.className = 'spinner-border';
 
     navigator.geolocation.getCurrentPosition(OnGetPosition, OnGetPositionError);
 });
