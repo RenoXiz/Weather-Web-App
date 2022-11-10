@@ -3,14 +3,32 @@ $(document).ready(function () {
     var lang = window.navigator.language || navigator.browserLanguage;
 
     var weekday = new Array();
-    var feel_like = new Array();
+
+    var feel_like = "";
+    var humidity = "";
+    var chance_of_rain = "";
+    var pressure = "";
+    var wind_speed = "";
+    var uv_index = "";
 
     if (String.prototype.includes(lang, "es") == 0) {
         weekday = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
+        
         feel_like = "Sensación térmica";
+        humidity = "Humedad";
+        chance_of_rain = "Probabilidad de lluvia";
+        pressure = "Presión";
+        wind_speed = "Velocidad del viento";
+        uv_index = "Índice UV";
     } else {
         weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        
         feel_like = "Feels like";
+        humidity = "Humidity";
+        chance_of_rain = "Chance of rain";
+        pressure = "Pressure";
+        wind_speed = "Wind speed";
+        uv_index = "UV index";
     }
 
     //favicon
@@ -51,6 +69,26 @@ $(document).ready(function () {
                             <div class="temp-feel-like">
                                 <div class="temp-feel-like-text">${feel_like}</div>
                                 <div class="temp-feel-like-text">${Math.round(data.main.feels_like) + '°C'}</div>
+                            </div>
+                            <div class="humidity">
+                                <div class="humidity-text">${humidity}</div>
+                                <div class="humidity-text">${data.main.humidity + '%'}</div>
+                            </div>
+                            <div class="chance-of-rain">
+                                <div class="chance-of-rain-text">${chance_of_rain}</div>
+                                <div class="chance-of-rain-text">${data.clouds.all + '%'}</div>
+                            </div>
+                            <div class="pressure">
+                                <div class="pressure-text">${pressure}</div>
+                                <div class="pressure-text">${data.main.pressure + ' hPa'}</div>
+                            </div>
+                            <div class="wind-speed">
+                                <div class="wind-speed-text">${wind_speed}</div>
+                                <div class="wind-speed-text">${data.wind.speed + ' m/s'}</div>
+                            </div>
+                            <div class="uv-index">
+                                <div class="uv-index-text">${uv_index}</div>
+                                <div class="uv-index-text">${data.main.uvi}</div>
                             </div>
                             `;
                         
