@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 const GetCurrentWeatherData = async (lat, lon, lang) => {
     const api = process.env.API_KEY;
 
-    if(String.prototype.includes(lang, "es") == 0){
+    if(lang.includes("es") || lang.includes("ES")){
         lang = "es";
     }
     else{

@@ -17,7 +17,7 @@ $(document).ready(function () {
         return arr[(val % 16)];
     }
 
-    if (String.prototype.includes(lang, "es") == 0) {
+    if (lang.includes("es") || lang.includes("ES")) {
         weekday = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
         
         feel_like = "Sensación térmica";
