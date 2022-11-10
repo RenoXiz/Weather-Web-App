@@ -180,7 +180,7 @@ $(document).ready(function () {
     temp.innerHTML = '<div class="spinner-border" role="status"></div>';
     weather.innerHTML = '<div class="spinner-border" role="status"></div>';
     forecast.innerHTML = '<div class="spinner-border" role="status"></div>';
-    current.className = 'spinner-border';
+    current.className = '';
 
     navigator.geolocation.getCurrentPosition(OnGetPosition, OnGetPositionError);
 });
