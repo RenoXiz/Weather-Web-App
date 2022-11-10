@@ -3,11 +3,14 @@ $(document).ready(function () {
     var lang = window.navigator.language || navigator.browserLanguage;
 
     var weekday = new Array();
+    var feel_like = new Array();
 
     if (String.prototype.includes(lang, "es") == 0) {
         weekday = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
+        feel_like = "Sensación térmica";
     } else {
         weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        feel_like = "Feels like";
     }
 
     //favicon
@@ -46,8 +49,8 @@ $(document).ready(function () {
 
                         current.innerHTML = `
                             <div class="temp-feel-like">
+                                <div class="temp-feel-like-text">${feel_like}</div>
                                 <div class="temp-feel-like-text">${Math.round(data.main.feels_like) + '°C'}</div>
-                                <div class="temp-feel-like-text">${data.weather[0].description}</div>
                             </div>
                             `;
                         
