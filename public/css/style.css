@@ -107,79 +107,97 @@ body{
 }
 
 .temp-feel-like{
+  width: 50%;
+  padding: 10px;
+}
+
+.temp-feel-like-text{
+  font-size: 0.8em;
+  color: #131313;
+}
+
+.temp-feel-like-value{
   font-size: 1em;
   font-weight: bold;
   color: #000000;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  width: 50%;
-  padding: 10px;
 }
 
 .humidity{
+  width: 50%;
+  padding: 10px;
+}
+
+.humidity-text{
+  font-size: 0.8em;
+  color: #131313;
+}
+
+.humidity-value{
   font-size: 1em;
   font-weight: bold;
   color: #000000;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  width: 50%;
-  padding: 10px;
 }
 
 .chance-of-rain{
-  font-size: 1em;
-  font-weight: bold;
-  color: #000000;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
   width: 50%;
   padding: 10px;
+}
+
+.chance-of-rain-text{
+  font-size: 0.8em;
+  color: #131313;
+}
+
+.chance-of-rain-value{
+  font-size: 1em;
+  font-weight: bold;
+  color: #131313;
 }
 
 .pressure{
+  width: 50%;
+  padding: 10px;
+}
+
+.pressure-text{
+  font-size: 0.8em;
+  color: #131313;
+}
+
+.pressure-value{
   font-size: 1em;
   font-weight: bold;
   color: #000000;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  width: 50%;
-  padding: 10px;
 }
 
 .wind-speed{
-  font-size: 1em;
-  font-weight: bold;
-  color: #000000;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
   width: 50%;
   padding: 10px;
 }
 
-.wind-direction{
+.wind-speed-text{
+  font-size: 0.8em;
+  color: #131313;
+}
+
+.wind-speed-value{
   font-size: 1em;
   font-weight: bold;
   color: #000000;
+}
 
+.wind-direction{
   width: 50%;
   padding: 10px;
+}
+
+.wind-direction-text{
+  font-size: 0.8em;
+  color: #131313;
+}
+
+.wind-direction-value{
+  font-size: 1em;
+  font-weight: bold;
+  color: #000000;
 }

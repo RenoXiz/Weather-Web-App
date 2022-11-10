@@ -74,27 +74,27 @@ $(document).ready(function () {
                         current.innerHTML = `
                             <div class="temp-feel-like">
                                 <div class="temp-feel-like-text">${feel_like}</div>
-                                <div class="temp-feel-like-text">${Math.round(data.main.feels_like) + '°C'}</div>
+                                <div class="temp-feel-like-value">${Math.round(data.main.feels_like) + '°C'}</div>
                             </div>
                             <div class="humidity">
                                 <div class="humidity-text">${humidity}</div>
-                                <div class="humidity-text">${data.main.humidity + '%'}</div>
+                                <div class="humidity-value">${data.main.humidity + '%'}</div>
                             </div>
                             <div class="chance-of-rain">
                                 <div class="chance-of-rain-text">${chance_of_rain}</div>
-                                <div class="chance-of-rain-text">${data.clouds.all + '%'}</div>
+                                <div class="chance-of-rain-value">${data.clouds.all + '%'}</div>
                             </div>
                             <div class="pressure">
                                 <div class="pressure-text">${pressure}</div>
-                                <div class="pressure-text">${data.main.pressure + ' hPa'}</div>
+                                <div class="pressure-value">${data.main.pressure + ' hPa'}</div>
                             </div>
                             <div class="wind-speed">
                                 <div class="wind-speed-text">${wind_speed}</div>
-                                <div class="wind-speed-text">${data.wind.speed + ' m/s'}</div>
+                                <div class="wind-speed-value">${data.wind.speed + ' m/s'}</div>
                             </div>
                             <div class="wind-direction">
                                 <div class="wind-direction-text">${wind_direction}</div>
-                                <div class="wind-direction-text">${DegToCompass(data.wind.deg)}</div>
+                                <div class="wind-direction-value">${DegToCompass(data.wind.deg)}</div>
                             </div>
                             `;
                         
