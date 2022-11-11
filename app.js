@@ -18,6 +18,10 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(morgan('tiny'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
 
 //routes    
 app.get('/', (req, res) => {
