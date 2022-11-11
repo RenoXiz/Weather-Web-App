@@ -100,7 +100,12 @@ $(document).ready(function () {
                             `;
                         
                         favicon.href = `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
-                        title.innerHTML = 'Weather - ' + data.weather[0].main;
+
+                        if (lang.includes("es") || lang.includes("ES")) {
+                            title.innerHTML = `Tiempo - ${data.weather[0].main}`;
+                        } else {
+                            title.innerHTML = 'Weather - ' + data.weather[0].main;
+                        }
                     }
                 }
             });
