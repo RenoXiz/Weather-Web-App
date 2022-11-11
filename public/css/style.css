@@ -3,7 +3,7 @@ body{
 }
 
 .city-container{
-  margin-top: 5px;
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -35,7 +35,7 @@ body{
 }
 
 .forecast-container{
-  margin-top: 15vh;
+  margin-top: 18vh;
   margin-left: 20px;
   margin-right: 20px;
   text-align: center;
@@ -209,13 +209,18 @@ body{
 .daily-forecast-container{
   overflow: auto;
   white-space: nowrap;
+
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .daily-forecast-item{
   display: inline-block;
-  align-items: center;
+  text-align: center;
 
-  margin: 10px;
+  margin-right: 20px;
+
   padding: 10px;
 
   background-color: #e2e2e2;
@@ -223,6 +228,22 @@ body{
 }
 
 .daily-forecast-icon{
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
+}
+
+.daily-forecast-date{
+  font-size: 0.8em;
+  color: #000000;
+}
+
+.daily-forecast-time{
+  font-size: 0.8em;
+  color: #000000;
+}
+
+.daily-forecast-temp{
+  font-size: 1em;
+  font-weight: bold;
+  color: #000000;
 }

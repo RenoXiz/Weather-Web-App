@@ -140,22 +140,22 @@ $(document).ready(function () {
                             }
 
                         });
-                        
-                        forecast.innerHTML += `<div class="daily-forecast-item">`;
+
+
+                        const daily_forecast = document.querySelector('.daily-forecast-container');
 
                         list.forEach((item, index) => {
                             let date = new Date(item.dt_txt);
+                            let day = weekday[date.getDay()];
                             let time = date.toLocaleTimeString(lang, {hour: '2-digit', minute:'2-digit'});
 
-                            forecast.innerHTML +=  `<div class="daily-forecast-item">
-                                                        <div class="daily-forecast-time">${time}</div>
-                                                        <div class="daily-forecast-temp">${Math.round(item.main.temp) + '°C'}</div>
-                                                        <img class="daily-forecast-icon" src="https://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png" alt="weather-icon">
-                                                        <div class="daily-forecast-weather">- ${item.weather[0].main}</div>
-                                                    </div>`;
+                            daily_forecast.innerHTML += `<div class="daily-forecast-item">
+                                                            <div class="daily-forecast-date">${day}</div>
+                                                            <div class="daily-forecast-time">${time}</div>
+                                                            <div class="daily-forecast-temp">${Math.round(item.main.temp) + '°C'}</div>
+                                                            <img class="daily-forecast-icon" src="https://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png" alt="weather-icon">
+                                                        </div>`;
                         });
-
-                        forecast.innerHTML += `</div>`;
                     }
                 }
             });
