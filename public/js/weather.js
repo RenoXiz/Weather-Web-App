@@ -101,25 +101,12 @@ $(document).ready(function () {
                         
                         favicon.href = `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
                         title.innerHTML = 'Weather - ' + data.weather[0].main;
-
-                        localStorage.setItem('city', city.innerHTML);
-                        localStorage.setItem('temp', temp.innerHTML);
-                        localStorage.setItem('weather', weather.innerHTML);
-                    }
-                    else {
-                        city.innerHTML = localStorage.getItem('city');
-                        temp.innerHTML = localStorage.getItem('temp');
-                        weather.innerHTML = localStorage.getItem('weather');
                     }
                 }
             });
         }
         catch(e){
             console.log(e);
-
-            city.innerHTML = localStorage.getItem('city');
-            temp.innerHTML = localStorage.getItem('temp');
-            weather.innerHTML = localStorage.getItem('weather');
         }
         
         //Daily forecast data
@@ -152,28 +139,18 @@ $(document).ready(function () {
                                                         </div>`;
                             }
                         });
-    
-                        localStorage.setItem('forecast', forecast.innerHTML);
-                    }
-                    else {
-                        forecast.innerHTML = localStorage.getItem('forecast');
                     }
                 }
             });
         }
         catch(e){
             console.log(e);
-            
-            forecast.innerHTML = localStorage.getItem('forecast');
         }
         
     }
 
     const OnGetPositionError = (e) => {
-        city.innerHTML = localStorage.getItem('city');
-        temp.innerHTML = localStorage.getItem('temp');
-        weather.innerHTML = localStorage.getItem('weather');
-        forecast.innerHTML = localStorage.getItem('forecast');
+        console.log(e);
     }
 
     city.innerHTML = '<div class="spinner-border" role="status"></div>';
