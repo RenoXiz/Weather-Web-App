@@ -18,10 +18,6 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(morgan('tiny'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-});
 
 //routes    
 app.get('/', (req, res) => {
@@ -29,12 +25,19 @@ app.get('/', (req, res) => {
 });
 
 app.post('/GetCurrentWeatherData', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
+
     weatherapi.GetCurrentWeatherData(req.body.lat, req.body.lon, req.body.lang).then((data) => {
         res.json(data);
     });
 });
 
-app.post('/GetWeatherForecastData', (req, res) => {
+app.post('/GetWeatherForecastData', (req, res) => {    
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
+
+
     weatherapi.GetWeatherForecastData(req.body.lat, req.body.lon, req.body.lang).then((data) => {
         res.json(data);
     });
