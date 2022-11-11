@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "deploy": "npm i",
+    "deploy": "npm ci",
     "dev": "nodemon app.js"
   },
   "author": "RenitoZix",
