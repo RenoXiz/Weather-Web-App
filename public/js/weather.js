@@ -141,7 +141,7 @@ $(document).ready(function () {
 
                         });
                         
-                        forecast.innerHTML += `< class="daily-forecast-item">`;
+                        forecast.innerHTML += `<div class="daily-forecast-item">`;
 
                         list.forEach((item, index) => {
                             let date = new Date(item.dt_txt);
