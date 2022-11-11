@@ -205,3 +205,21 @@ body{
 .spinner-border{
   text-align: center;
 }
+
+.daily-forecast-container{
+  margin: 10px;
+
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.daily-forecast-item{
+  display: inline-block;
+  align-items: center;
+
+  margin: 10px;
+  padding: 10px;
+
+  background-color: #e2e2e2;
+  border-radius: 20px;
+}
